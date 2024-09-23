@@ -1,13 +1,25 @@
 ﻿while (true)
 {
-    Console.WriteLine("Which program would you like to run? \n1)What is next");
+    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions");
     int option = Convert.ToInt32(Console.ReadLine());
+
+    Console.Clear();
 
     if (option == 1)
     {
         Console.WriteLine("What are you currently doing?");
         string currentAction = Console.ReadLine().ToLower();
         WhatIsNext(currentAction);
+    }
+    else if(option == 2)
+    {
+         Console.WriteLine("What is your height");
+
+        Console.WriteLine("Feet: ");
+        int hFeet = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Inches: ");
+        int hInches = Convert.ToInt32(Console.ReadLine());
     }
 }
 
