@@ -5,6 +5,7 @@
 
     if (option == 1)
     {
-
+        Console.WriteLine("What are you currently doing?");
+        string currentAction = Console.ReadLine();
     }
 }
