@@ -18,8 +18,9 @@ while (true)
         ImperialHeight impHeight = GetImperialHeight();
 
         impHeight.GetHeightInInches();
-        impHeight.ViewHeightInInches();
 
+        double heightInMeters = FindHeightInMeters(impHeight);
+        Console.WriteLine(heightInMeters.ToString());
     }
 }
 
@@ -62,4 +63,10 @@ static ImperialHeight GetImperialHeight()
     imperialHeight.GetInches(hInches);
 
     return imperialHeight;
+}
+
+static double FindHeightInMeters(ImperialHeight iHeight)
+{
+    double meters = Convert.ToDouble(iHeight.ViewHeightInInches()) / 39.37;
+    return meters;
 }

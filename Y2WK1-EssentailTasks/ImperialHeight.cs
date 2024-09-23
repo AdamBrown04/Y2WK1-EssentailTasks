@@ -33,9 +33,9 @@ namespace Y2WK1_EssentailTasks
             fullHeightInches = inches + (feet*12);
         }
 
-        public void ViewHeightInInches()
+        public double ViewHeightInInches()
         {
-            Console.WriteLine(fullHeightInches);
+            return Convert.ToDouble(fullHeightInches);
         }
     }
 }
