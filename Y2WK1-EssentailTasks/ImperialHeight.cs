@@ -15,12 +15,12 @@ namespace Y2WK1_EssentailTasks
 
         public void GetFeet(int hFeet)
         {
-            hFeet = feet;
+            feet = hFeet;
         }
 
         public void GetInches(int hInches)
         {
-            hInches = inches;
+            inches = hInches;
         }
 
         public void ViewHeight()
