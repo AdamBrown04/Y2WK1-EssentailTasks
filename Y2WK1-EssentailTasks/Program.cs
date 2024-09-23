@@ -21,6 +21,8 @@ while (true)
 
         double heightInMeters = FindHeightInMeters(impHeight);
         Console.WriteLine(heightInMeters.ToString());
+
+        Console.WriteLine(FindHeight2DP(heightInMeters));
     }
 }
 
@@ -69,4 +71,12 @@ static double FindHeightInMeters(ImperialHeight iHeight)
 {
     double meters = Convert.ToDouble(iHeight.ViewHeightInInches()) / 39.37;
     return meters;
+}
+
+static string FindHeight2DP(double dHeight)
+{
+    string sHeight = dHeight.ToString();
+    sHeight = sHeight[1].ToString();
+
+    return sHeight;
 }
