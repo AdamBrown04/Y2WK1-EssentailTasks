@@ -1,8 +1,9 @@
-﻿using Y2WK1_EssentailTasks;
+﻿using System.ComponentModel.DataAnnotations;
+using Y2WK1_EssentailTasks;
 
 while (true)
 {
-    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions");
+    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions \n3)string fun");
     int option = Convert.ToInt32(Console.ReadLine());
 
     Console.Clear();
@@ -24,9 +25,33 @@ while (true)
 
         Console.WriteLine(FindHeight2DP(heightInMeters));
     }
+    else if(option == 3)
+    {
+        Console.Write("Enter a string: ");
+        string userInput = Console.ReadLine();
+
+        int lengthOfString = userInput.Length;
+        string upperString = userInput.ToUpper();
+
+        int numOfUpper = 0;
+        int numOfLower = 0;
+
+        for(int x = 0; x < lengthOfString; x++)
+        {
+            if (userInput[x] == upperString[x])
+            {
+                numOfUpper++;
+            }
+            else
+            {
+                numOfLower++;
+            }
+        }
+        
+    }
 }
 
-
+//task 1
 static void WhatIsNext(string currentAction)
 {
     switch (currentAction) 
@@ -49,7 +74,7 @@ static void WhatIsNext(string currentAction)
     }
 
 }
-
+//task 2
 static ImperialHeight GetImperialHeight()
 {
     ImperialHeight imperialHeight = new ImperialHeight();
@@ -93,3 +118,4 @@ static string FindHeight2DP(double dHeight)
 
     return sHeight;
 }
+//task 3
