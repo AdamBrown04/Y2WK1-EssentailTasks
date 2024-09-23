@@ -17,6 +17,8 @@ while (true)
     {
         ImperialHeight impHeight = GetImperialHeight();
 
+        impHeight.GetHeightInInches();
+        impHeight.ViewHeightInInches();
 
     }
 }
@@ -50,10 +52,10 @@ static ImperialHeight GetImperialHeight()
     ImperialHeight imperialHeight = new ImperialHeight();
     Console.WriteLine("What is your height");
 
-    Console.WriteLine("Feet: ");
+    Console.Write("Feet: ");
     int hFeet = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Inches: ");
+    Console.Write("Inches: ");
     int hInches = Convert.ToInt32(Console.ReadLine());
 
     imperialHeight.GetFeet(hFeet);

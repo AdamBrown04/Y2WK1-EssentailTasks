@@ -11,6 +11,7 @@ namespace Y2WK1_EssentailTasks
     {
         int feet;
         int inches;
+        int fullHeightInches = 0;
 
         public void GetFeet(int hFeet)
         {
@@ -25,6 +26,16 @@ namespace Y2WK1_EssentailTasks
         public void ViewHeight()
         {
             Console.WriteLine($"{feet} foot and {inches} inches");
+        }
+
+        public void GetHeightInInches()
+        {
+            fullHeightInches = inches + (feet*12);
+        }
+
+        public void ViewHeightInInches()
+        {
+            Console.WriteLine(fullHeightInches);
         }
     }
 }
