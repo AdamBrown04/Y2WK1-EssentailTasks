@@ -76,7 +76,20 @@ static double FindHeightInMeters(ImperialHeight iHeight)
 static string FindHeight2DP(double dHeight)
 {
     string sHeight = dHeight.ToString();
-    sHeight = sHeight[1].ToString();
+    string thirdDec = sHeight[4].ToString();
+    int roundingNumber = Convert.ToInt32(thirdDec);
+    if (roundingNumber > 5)
+    {
+        sHeight = sHeight.Substring(0, 4);
+        double height = Convert.ToDouble(sHeight);
+        height = height + 0.01;
+        sHeight = height.ToString();
+
+    }
+    else if(roundingNumber < 5)
+    {
+        sHeight = sHeight.Substring(0, 4);
+    }
 
     return sHeight;
 }
