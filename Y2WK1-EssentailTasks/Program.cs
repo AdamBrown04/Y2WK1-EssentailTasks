@@ -1,4 +1,6 @@
-﻿while (true)
+﻿using Y2WK1_EssentailTasks;
+
+while (true)
 {
     Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions");
     int option = Convert.ToInt32(Console.ReadLine());
@@ -13,13 +15,9 @@
     }
     else if(option == 2)
     {
-         Console.WriteLine("What is your height");
+        ImperialHeight impHeight = GetImperialHeight();
 
-        Console.WriteLine("Feet: ");
-        int hFeet = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Inches: ");
-        int hInches = Convert.ToInt32(Console.ReadLine());
     }
 }
 
@@ -45,4 +43,21 @@ static void WhatIsNext(string currentAction)
             break;
     }
 
+}
+
+static ImperialHeight GetImperialHeight()
+{
+    ImperialHeight imperialHeight = new ImperialHeight();
+    Console.WriteLine("What is your height");
+
+    Console.WriteLine("Feet: ");
+    int hFeet = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Inches: ");
+    int hInches = Convert.ToInt32(Console.ReadLine());
+
+    imperialHeight.GetFeet(hFeet);
+    imperialHeight.GetInches(hInches);
+
+    return imperialHeight;
 }
