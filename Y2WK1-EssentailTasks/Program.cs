@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using Y2WK1_EssentailTasks;
 
 while (true)
 {
-    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions \n3)string fun \n4)Timestables");
+    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions \n3)string fun \n4)Timestables \n5)Amount of 2&7s between 0 and 1,000,000 \n6)statistics of a list");
     int option = Convert.ToInt32(Console.ReadLine());
 
     Console.Clear();
@@ -78,6 +79,67 @@ while (true)
         {
             Console.Write($"{i*number}\n");
         }
+    }
+    else if(option == 5)
+    {
+        int numOfValuesFound = 0;
+
+        for(int x = 0; x < 1000000; x++)
+        {
+            string value = x.ToString();
+            for(int i = 0; i < value.Length; i++)
+            {
+                if (Convert.ToInt32(value[i]) == 50 || Convert.ToInt32(value[i]) == 55)
+                {
+                    numOfValuesFound++;
+                    break;
+                }
+               
+            }
+        }
+        Console.WriteLine($"There are {numOfValuesFound} numbers with either a 2 or 7 in it");
+    }
+    else if(option == 6)
+    {
+        List<float> userInputs = new List<float>();
+
+        while (true)
+        {
+            Console.Write("Enter any number: ");
+            float input = Convert.ToSingle(Console.ReadLine());
+            if(input == 0)
+            {
+                break;
+            }
+            else
+            {
+                userInputs.Add(input);
+            }
+        }
+
+        float max = 0;
+        float min = 0;
+        float average = 0;
+        float total = 0;
+        bool isFirstNumber = true;
+
+        for(int x = 0; x < userInputs.Count; x++)
+        {
+            if (userInputs[x] > max)
+            {
+                max = userInputs[x];
+            }
+            if (userInputs[x] < min || isFirstNumber)
+            {
+                min = userInputs[x];
+                isFirstNumber = false;
+            }
+            total = total + userInputs[x];
+        }
+
+        average = total / userInputs.Count;
+
+        Console.WriteLine($"Statistics: \n{max} is the highest number \n{min} is the lowest number \n {total} is the total sum \n{average} is the mean average");
     }
 }
 
