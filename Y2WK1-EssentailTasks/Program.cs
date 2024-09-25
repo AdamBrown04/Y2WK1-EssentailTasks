@@ -119,7 +119,6 @@ while (true)
 
         float max = 0;
         float min = 0;
-        float average = 0;
         float total = 0;
         bool isFirstNumber = true;
 
@@ -137,7 +136,7 @@ while (true)
             total = total + userInputs[x];
         }
 
-        average = total / userInputs.Count;
+        float average = total / userInputs.Count;
 
         Console.WriteLine($"Statistics: \n{max} is the highest number \n{min} is the lowest number \n {total} is the total sum \n{average} is the mean average");
     }
