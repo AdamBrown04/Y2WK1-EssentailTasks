@@ -40,19 +40,19 @@ while (true)
 
         for(int x = 0; x < lengthOfString; x++)
         {
-            if (userInput[x] == upperString[x])
+            if (userInput[x] == upperString[x] && !char.IsDigit(userInput[x]) && !char.IsPunctuation(userInput[x]) && userInput[x] != ' ')
             {
                 numOfUpper++;
             }
-            else
+            else if(!char.IsDigit(userInput[x]) && !char.IsPunctuation(userInput[x]) && userInput[x] != ' ')
             {
                 numOfLower++;
             }
-            if (char.IsSymbol(userInput[x]))
+            if (char.IsPunctuation(userInput[x]) && userInput[x] != ' ')
             {
                 numOfSpecial++;
             }
-            if (char.IsDigit(userInput[x]))
+            if (char.IsDigit(userInput[x]) && userInput[x] != ' ')
             {
                 numOfDigits++;
             }
@@ -62,11 +62,11 @@ while (true)
 
         if (noWhitespace == userInput)
         {
-            Console.WriteLine($"There are: \n{numOfLower} lower case letters \n{numOfUpper} upper case letters \n{numOfDigits} numbers \n{numOfSpecial} special characters \nThere are not any spaces");
+            Console.WriteLine($"There are: \n{lengthOfString} charcters \n{numOfLower} lower case letters \n{numOfUpper} upper case letters \n{numOfDigits} numbers \n{numOfSpecial} special characters \nThere are not any spaces");
         }
         else
         {
-            Console.WriteLine($"There are: \n{numOfLower} lower case letters \n{numOfUpper} upper case letters \n{numOfDigits} numbers \n{numOfSpecial} special characters \nThere are spaces");
+            Console.WriteLine($"There are: \n{lengthOfString} charcters \n{numOfLower} lower case letters \n{numOfUpper} upper case letters \n{numOfDigits} numbers \n{numOfSpecial} special characters \nThere are spaces");
         }
     }
 }
