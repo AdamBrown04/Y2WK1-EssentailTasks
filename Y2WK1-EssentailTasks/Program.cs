@@ -35,6 +35,8 @@ while (true)
 
         int numOfUpper = 0;
         int numOfLower = 0;
+        int numOfDigits = 0;
+        int numOfSpecial = 0;
 
         for(int x = 0; x < lengthOfString; x++)
         {
@@ -46,8 +48,26 @@ while (true)
             {
                 numOfLower++;
             }
+            if (char.IsSymbol(userInput[x]))
+            {
+                numOfSpecial++;
+            }
+            if (char.IsDigit(userInput[x]))
+            {
+                numOfDigits++;
+            }
         }
-        
+
+        string noWhitespace = userInput.Replace(" ", "");
+
+        if (noWhitespace == userInput)
+        {
+            Console.WriteLine($"There are: \n{numOfLower} lower case letters \n{numOfUpper} upper case letters \n{numOfDigits} numbers \n{numOfSpecial} special characters \nThere are not any spaces");
+        }
+        else
+        {
+            Console.WriteLine($"There are: \n{numOfLower} lower case letters \n{numOfUpper} upper case letters \n{numOfDigits} numbers \n{numOfSpecial} special characters \nThere are spaces");
+        }
     }
 }
 
