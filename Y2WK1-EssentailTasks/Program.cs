@@ -3,7 +3,7 @@ using Y2WK1_EssentailTasks;
 
 while (true)
 {
-    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions \n3)string fun");
+    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions \n3)string fun \n4)Timestables");
     int option = Convert.ToInt32(Console.ReadLine());
 
     Console.Clear();
@@ -67,6 +67,16 @@ while (true)
         else
         {
             Console.WriteLine($"There are: \n{lengthOfString} charcters \n{numOfLower} lower case letters \n{numOfUpper} upper case letters \n{numOfDigits} numbers \n{numOfSpecial} special characters \nThere are spaces");
+        }
+    }
+    else if(option == 4)
+    {
+        Console.Write("Enter a number you want the multple up to 12 of: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i < 13; i++) 
+        {
+            Console.Write($"{i*number}\n");
         }
     }
 }
