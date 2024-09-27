@@ -4,7 +4,7 @@ using Y2WK1_EssentailTasks;
 
 while (true)
 {
-    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions \n3)string fun \n4)Timestables \n5)Amount of 2&7s between 0 and 1,000,000 \n6)statistics of a list");
+    Console.WriteLine("Which program would you like to run? \n1)What is next \n2)Height functions \n3)string fun \n4)Timestables \n5)Amount of 2&7s between 0 and 1,000,000 \n6)statistics of a list \n7)running total of a list");
     int option = Convert.ToInt32(Console.ReadLine());
 
     Console.Clear();
@@ -140,6 +140,12 @@ while (true)
 
         Console.WriteLine($"Statistics: \n{max} is the highest number \n{min} is the lowest number \n {total} is the total sum \n{average} is the mean average");
     }
+    else if(option == 7)
+    {
+        Console.WriteLine("When you want the program to end, input END");
+
+        RunningList();
+    }
 }
 
 //task 1
@@ -209,4 +215,61 @@ static string FindHeight2DP(double dHeight)
 
     return sHeight;
 }
-//task 3
+//task 7
+
+static void RunningList()
+{
+    List<int> numbers = new List<int>();
+
+    int total = 0;
+
+    while (true)
+    {
+        Console.Write("Enter a number: ");
+        string input = Console.ReadLine().ToUpper();
+
+        if(input != "END")
+        {
+            numbers.Add(Convert.ToInt32(input));
+
+            if (numbers.Count > 1)
+            {
+                for(int i = 0; i < numbers.Count; i++)
+                {
+                    if(i != numbers.Count - 1)
+                    {
+                        Console.Write($"{numbers[i]}, ");
+                    }
+                    else
+                    {
+                        Console.Write($"{numbers[i]}");
+                    }
+                    
+                }
+
+                Console.Write("\n");
+
+                for (int x = 0; x < numbers.Count; x++)
+                {
+                    if(x != numbers.Count-1)
+                    {
+                        total = total + numbers[x];
+                        Console.Write($"{total}, ");
+                    }
+                    else
+                    {
+                        total = total + numbers[x];
+                        Console.Write($"{total}");
+                    } 
+                }
+
+                Console.Write("\n");
+            }
+        }
+        else
+        {
+            break;
+        }
+ 
+    }
+}
